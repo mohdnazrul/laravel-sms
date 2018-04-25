@@ -25,9 +25,9 @@ class SMSApi
     }
 
     public function sendSMS($mobile_no, $msg){
-        $url = $this->serviceURL."/?apiusername=".$this->username."&" .
-            "apipassword=".$this->password."&mobileno=" .rawurlencode($mobile_no) .
-            "&senderid=onewaysms&languagetype=1&message=" .rawurldecode(stripcslashes($msg));
+
+        $url = $this->serviceURL."/?apiusername=".$this->username. "&apipassword=".$this->password."&mobileno=" .rawurlencode($mobile_no) .
+            "&senderid=onewaysms&languagetype=1&message=" .rawurlencode(stripcslashes($msg));
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -43,6 +43,8 @@ class SMSApi
         $response = curl_exec($curl);
         $err = curl_error($curl);
         curl_close($curl);
+
+        var_dump($response);
 
         if($response > 0){
             return true;
