@@ -1,0 +1,35 @@
+{
+    "name": "mohdnazrul/laravel-sms",
+    "description": "Library for SMS - Using One Way SMS",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "illuminate/support": "5.4.*",
+        "phpunit/phpunit": "^7.0.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohd Nazrul Bin Mustaffa",
+            "email": "nazrulmustaffa@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MohdNazrul\\SMSLaravel\\": "src",
+            "MohdNazrul\\SMSLaravelTest\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MohdNazrul\\SMSLaravel\\SMSServiceProvider"
+            ],
+            "aliases": {
+                "CBM": "MohdNazrul\\SMSLaravel\\SMSApiFacade"
+            }
+        }
+    }
+}
